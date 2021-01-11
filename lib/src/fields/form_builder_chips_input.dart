@@ -24,6 +24,8 @@ class FormBuilderChipsInput<T> extends FormBuilderField<List<T>> {
   final bool allowChipEditing;
   final bool autofocus;
   final TextOverflow textOverflow;
+  final List<T> initialSuggestions;
+  final bool showKeyboard;
 
   /// Creates a field that takes a list of `Chip`s as input and suggests more options
   /// while typing
@@ -57,6 +59,8 @@ class FormBuilderChipsInput<T> extends FormBuilderField<List<T>> {
     this.allowChipEditing = false,
     this.autofocus = false,
     this.textOverflow,
+    this.initialSuggestions,
+    this.showKeyboard = true,
   }) : super(
           key: key,
           initialValue: initialValue,
@@ -97,6 +101,8 @@ class FormBuilderChipsInput<T> extends FormBuilderField<List<T>> {
               autofocus: autofocus,
               focusNode: state.effectiveFocusNode,
               textOverflow: textOverflow,
+              initialSuggestions: initialSuggestions,
+              showKeyboard: showKeyboard,
             );
           },
         );
